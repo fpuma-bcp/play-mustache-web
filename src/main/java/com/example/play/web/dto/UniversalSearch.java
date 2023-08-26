@@ -1,2 +1,4 @@
-package com.example.play.web.dto;public record UniversalSearch() {
+package com.example.play.web.dto;
+
+public record UniversalSearch(String value) {
 }

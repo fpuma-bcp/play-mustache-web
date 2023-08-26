@@ -1,6 +1,7 @@
 package com.example.play.web.controller;
 
-import com.example.play.web.entity.Video;
+import com.example.play.web.dto.NewVideo;
+import com.example.play.web.entity.VideoEntity;
 import com.example.play.web.service.VideoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,12 +18,12 @@ public class ApiController {
   }
 
   @GetMapping("/api/videos")
-  public List<Video> all() {
+  public List<VideoEntity> all() {
     return videoService.getVideos();
   }
 
   @PostMapping("/api/videos")
-  public Video newVideo(@RequestBody Video newVideo) {
+  public VideoEntity newVideo(@RequestBody NewVideo newVideo) {
     return videoService.create(newVideo);
   }
 }
